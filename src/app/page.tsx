@@ -8,7 +8,7 @@ export default function Home() {
           Movice
         </h1>
         <p className="text-lg text-gray-600 dark:text-gray-400">
-          Tell us how you feel, we'll tell you what to watch
+          Tell us how you feel, we&apos;ll tell you what to watch
         </p>
         <SearchBar />
       </div>
