@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@config "../../tailwind.config.ts";
+
+@layer base {
+  :root {
+    --background: 255 249 219; /* Warmer yellowish color */
+    --foreground: 23 23 23;
+  }
+
+  .dark {
+    --background: 23 23 23;
+    --foreground: 255 249 219;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
