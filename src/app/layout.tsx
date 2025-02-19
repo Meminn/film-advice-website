@@ -40,7 +40,7 @@ export default function RootLayout({
             <footer className="border-t">
               <div className="container flex h-16 items-center">
                 <p className="text-sm text-muted-foreground">
-                  © 2024 Movice. All rights reserved.
+                  © 2024 Moodvice. All rights reserved.
                 </p>
               </div>
             </footer>

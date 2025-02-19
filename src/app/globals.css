@@ -7,16 +7,26 @@
   :root {
     --background: 255 249 219; /* Warmer yellowish color */
     --foreground: 23 23 23;
+    --border-color: #e5e7eb; /* Light gray border color */
   }
 
   .dark {
     --background: 23 23 23;
     --foreground: 255 249 219;
+    --border-color: #262b32; /* Darker gray border color */
   }
 
   body {
     @apply bg-background text-foreground;
     font-family: Arial, Helvetica, sans-serif;
+  }
+
+  header {
+    border-color: var(--border-color);
+  }
+
+  footer {
+    border-color: var(--border-color);
   }
 }
 
