@@ -78,8 +78,8 @@ export async function fetchPopularMovies() {
 
 // Function to get genre IDs from mood keywords
 function getGenreIdsFromMood(mood: string): string {
-  const keywords = moodKeywords[mood] || [];
-  const genreIds = keywords.map(keyword => genreMapping[keyword]).join(',');
+  const keywords = moodKeywords[mood as keyof typeof moodKeywords] || [];
+  const genreIds = keywords.map(keyword => genreMapping[keyword as keyof typeof genreMapping]).join(',');
   return genreIds;
 }
 
