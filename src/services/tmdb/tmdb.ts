@@ -8,12 +8,12 @@ type TMDBParams = {
 
 const TMDB_CONFIG = {
   BASE_URL: 'https://api.themoviedb.org/3',
-  API_KEY: process.env.NEXT_PUBLIC_TMDB_API_KEY, // Make sure to use NEXT_PUBLIC_ prefix for client-side
+  API_KEY: process.env.TMDB_API_KEY, // Use your own TMDB API key
   DEFAULT_PARAMS: {
     include_adult: "false",
-    'vote_count.gte': "100", // Lowered to ensure more results
+    'vote_count.gte': "100", 
     'vote_average.gte': "6",
-    'popularity.gte': "10", // Lowered to ensure more results
+    'popularity.gte': "10",
     language: 'en-US',
     with_original_language: 'en',
     'release_date.lte': '2024-12-31'
@@ -27,7 +27,7 @@ export const genreMetadata = new Map<number, number>([
   [16, 10], // Animation
   [35, 10], // Comedy
   [80, 10], // Crime
-  [99, 5], // Documentary
+  [99, 1], // Documentary
   [18, 10], // Drama
   [10751, 10], // Family
   [14, 10], // Fantasy
@@ -51,29 +51,29 @@ class TMDBService {
      // Add API key
     queryParams.append('api_key', this.apiKey);
     
-    // Add default params
+    // Add default params from the config
     Object.entries(TMDB_CONFIG.DEFAULT_PARAMS).forEach(([key, value]) => {
       if (value !== undefined) {
         queryParams.append(key, String(value));
       }
     });
     
-    // Add custom params
+    // Add custom params from the function call
     Object.entries(params).forEach(([key, value]) => {
       if (value !== undefined) {
         queryParams.append(key, String(value));
       }
     });
 
-    const url = `${this.baseUrl}${endpoint}?${queryParams}`;
+    const url = `${this.baseUrl}${endpoint}?${queryParams}`; // Construct the full URL
     console.log('TMDB API Request URL:', url);
     
-    const response = await fetch(url);
+    const response = await fetch(url); // Make the request
     
     if (!response.ok) {
       const errorText = await response.text();
       console.error('TMDB API Error Response:', errorText);
-      throw new Error(`TMDB API Error: ${response.status}`);
+      throw new Error(`TMDB API Error: ${response.status}`); // Throw an error if the response is not OK
     }
 
     return response.json();
