@@ -25,10 +25,10 @@ function RecommendationsContent() {
       const sentiment = await analyzeUserMood(userPrompt);
       console.log('Sentiment analysis result:', sentiment);
       
-      const recommendations = await tmdbService.getMovieRecommendations(
-        sentiment.sentimentScore, 
-        sentiment.genreIds
-      );
+      const response = await fetch(`/api/movies?sentimentScore=${sentiment.sentimentScore}&genreIds=${sentiment.genreIds.join(',')}`);
+      console.log('API Response:', response);
+
+      const recommendations = await response.json();
       console.log('Movie recommendations:', recommendations);
       
       setMovies(recommendations);

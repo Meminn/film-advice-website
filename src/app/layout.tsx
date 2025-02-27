@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Movice - Movie Advice for Every Mood",
+  title: "Moodvice - Movie Advice for Every Mood",
   description: "Get personalized movie advice based on your mood and feelings",
 };
 

@@ -58,6 +58,7 @@ class SentimentAnalysisService {
       10402: "Music",
       9648: "Mystery",
       10749: "Romance",
+      10752: "War",
       878: "Science Fiction",
       10770: "TV Movie",
       53: "Thriller"
