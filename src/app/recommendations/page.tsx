@@ -4,7 +4,6 @@ import { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
 import MovieGrid from '@/components/movies/MovieGrid';
 import SearchBar from '@/components/ui/SearchBar';
-import { tmdbService } from '@/services/tmdb/tmdb';
 import { analyzeUserMood } from '@/services/sentiment/sentiment';
 import type { Movie } from '@/services/tmdb/types';
 import RerollButton from '@/components/ui/RerollButton';
