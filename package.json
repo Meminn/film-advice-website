@@ -9,6 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^6.4.5",
     "@tailwindcss/forms": "^0.5.10",
     "compromise": "^14.14.4",
     "firebase": "^11.3.1",
@@ -21,7 +24,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@types/node": "^20",
-    "@types/react": "^19",
+    "@types/react": "^19.0.10",
     "@types/react-dom": "^19",
     "@types/sentiment": "^5.0.4",
     "eslint": "^9",

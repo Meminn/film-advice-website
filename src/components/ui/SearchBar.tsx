@@ -1,16 +1,31 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
+import React from 'react';
 
-export default function SearchBar() {
+interface SearchBarProps {
+  defaultValue: string;
+  placeholder: string;
+  onSearch: (prompt: string) => void;
+}
+
+const SearchBar: React.FC<SearchBarProps> = ({ defaultValue, placeholder, onSearch }) => {
   const [prompt, setPrompt] = useState('');
   const router = useRouter();
+
+  // Update the prompt state when defaultValue changes
+  useEffect(() => {
+    setPrompt(defaultValue || '');
+  }, [defaultValue]);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (prompt.trim()) {
-      router.push(`/search?q=${encodeURIComponent(prompt)}`);
+      onSearch(prompt); // Call the onSearch callback
+      
+      // Redirect to recommendations page instead of search
+      router.push(`/recommendations?prompt=${encodeURIComponent(prompt)}`);
     }
   };
 
@@ -19,9 +34,9 @@ export default function SearchBar() {
       <div className="relative flex items-center">
         <input
           type="text"
-          value={prompt}
+          value={prompt} // Controlled input
           onChange={(e) => setPrompt(e.target.value)}
-          placeholder="e.g., I need something uplifting after a long day..."
+          placeholder={placeholder}
           className="w-full h-14 px-6 text-lg rounded-full border border-gray-300 
                      dark:border-gray-700 dark:bg-gray-800 
                      focus:outline-none focus:ring-2 focus:ring-primary-500
@@ -58,3 +73,4 @@ function SearchIcon({ className }: { className?: string }) {
   );
 } 
 
+export default SearchBar;
