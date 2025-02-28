@@ -11,7 +11,7 @@ interface MovieGridProps {
 const MovieGrid: React.FC<MovieGridProps> = ({ movies, isLoading }) => {
   if (isLoading) {
     return (
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '10vh' }}>
         <CircularProgress />
       </div>
     );
@@ -26,7 +26,7 @@ const MovieGrid: React.FC<MovieGridProps> = ({ movies, isLoading }) => {
   }
 
   return (
-    <Grid container spacing={4} sx={{ padding: 4 }}>
+    <Grid container spacing={4} sx={{ padding: 2 }}>
       {movies.map((movie) => (
         <Grid item key={movie.id} xs={12} sm={6} md={4}>
           <MovieCard

@@ -1,0 +1,14 @@
+{
+  "redirects": [
+    {
+      "source": "https://movice-six.vercel.app",
+      "destination": "https://moodvice.vercel.app",
+      "permanent": true
+    },
+    {
+      "source": "https://moodvice-meminns-projects.vercel.app",
+      "destination": "https://moodvice.vercel.app",
+      "permanent": true
+    }
+  ]
+}

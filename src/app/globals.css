@@ -36,3 +36,24 @@
     --foreground: #ededed;
   }
 }
+/**
+.reroll-button {
+  background-color: var(--primary-600); 
+  color: white;
+  border: none;
+  border-radius: 8px; 
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.reroll-button:hover {
+  background-color: var(--primary-700);
+}
+
+.reroll-button:disabled {
+  background-color: var(--primary-800); 
+  cursor: not-allowed;
+}
+**/

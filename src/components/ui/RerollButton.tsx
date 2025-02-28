@@ -5,10 +5,14 @@ interface RerollButtonProps {
   isLoading: boolean;
 }
 
-const RerollButton: React.FC<RerollButtonProps> = ({ onReroll }) => {
+const RerollButton: React.FC<RerollButtonProps> = ({ onReroll, isLoading }) => {
   return (
-    <button onClick={onReroll} className="reroll-button">
-      Reroll Movies
+    <button
+      onClick={onReroll}
+      className="reroll-button px-6 py-3 rounded-lg text-white bg-primary-600 hover:bg-primary-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+      disabled={isLoading}
+    >
+      {isLoading ? 'Loading...' : 'Reroll Movies'}
     </button>
   );
 };

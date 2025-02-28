@@ -37,7 +37,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ defaultValue, placeholder, onSear
           value={prompt} // Controlled input
           onChange={(e) => setPrompt(e.target.value)}
           placeholder={placeholder}
-          className="w-full h-14 px-6 text-lg rounded-full border border-gray-300 
+          className="w-full h-14 px-6 pr-12 text-lg rounded-full border border-gray-300 
                      dark:border-gray-700 dark:bg-gray-800 
                      focus:outline-none focus:ring-2 focus:ring-primary-500
                      shadow-sm hover:shadow-md transition-shadow"

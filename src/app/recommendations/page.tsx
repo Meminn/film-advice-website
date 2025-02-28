@@ -28,7 +28,6 @@ function RecommendationsContent() {
       console.log('API Response:', response);
 
       const recommendations = await response.json();
-      console.log('Movie recommendations:', recommendations);
       
       setMovies(recommendations);
     } catch (error) {
@@ -59,13 +58,13 @@ function RecommendationsContent() {
         />
       </div>
       {movies.length > 0 && (
-        <div className="mb-6 text-center">
+        <div className="text-center">
           <h2 className="text-2xl font-bold">Movies that match your mood</h2>
           <p className="text-gray-600 dark:text-gray-400">Based on how you&apos;re feeling, we think you might enjoy these</p>
         </div>
       )}
       <MovieGrid movies={movies} isLoading={isLoading} />
-      <div className="mt-8 flex justify-center">
+      <div className="flex justify-center">
         <RerollButton 
           onReroll={() => prompt && fetchRecommendations(prompt)}
           isLoading={isLoading}
