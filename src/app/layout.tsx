@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     siteName: "Moodvice",
     images: [
       {
-        url: "https://moodvice.com/og-image.png", // Öne çıkan görsel URL'si (sayfanın paylaşım önizlemesinde görünür)
+        url: "https://moodvice.vercel.app/og-image.png", // Öne çıkan görsel URL'si (sayfanın paylaşım önizlemesinde görünür)
         width: 1200,
         height: 630,
         alt: "Moodvice Movie Recommendation",
@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Moodvice - Movie Advice for Every Mood",
     description: "Get personalized movie advice based on your mood and feelings.",
-    images: ["https://moodvice.com/og-image.png"], // Twitter için özel görsel
+    images: ["https://moodvice.vercel.app/og-image.png"], // Twitter için özel görsel
     //creator: "@moodvice", // Twitter handle (varsa ekleyebilirsin)
   },
   alternates: {
