@@ -10,7 +10,7 @@ Moodvice is an innovative web application that recommends movies based on your c
 
 ## Features
 
-- **Intuitive Interface**: Clean, Google-like search experience for expressing your mood
+- **Intuitive Interface**: Clean, searching experience for expressing your mood
 - **Sentiment Analysis**: Advanced mood detection that understands emotional nuances 
 - **Personalized Recommendations**: Custom movie suggestions tailored to your emotional state
 - **Diverse Genre Mapping**: Thoughtful connections between emotions and film genres
