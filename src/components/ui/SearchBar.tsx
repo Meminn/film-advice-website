@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import React from 'react';
+import ThemeToggle from './ThemeToggle';
 
 interface SearchBarProps {
   defaultValue: string;
@@ -44,13 +45,16 @@ const SearchBar: React.FC<SearchBarProps> = ({ defaultValue, placeholder, onSear
         />
         <button
           type="submit"
-          className="absolute right-3 p-3 text-gray-600 hover:text-primary-600
+          className="absolute right-10 p-3 text-gray-600 hover:text-primary-600
                      dark:text-gray-400 dark:hover:text-primary-500"
         >
           <SearchIcon className="w-6 h-6" />
         </button>
-      </div>
+        <ThemeToggle />
+      </div>  
+      
     </form>
+  
   );
 }
 

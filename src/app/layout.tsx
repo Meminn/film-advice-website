@@ -62,11 +62,6 @@ export default function RootLayout({
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="min-h-screen flex flex-col bg-background text-foreground transition-colors">
-            <header className="fixed top-0 z-50 w-full bg-background">
-              <div className=" flex h-16 items-center justify-end">
-              <ThemeToggle />
-              </div>
-            </header>
 
             <main className="flex-1">
               {children}
