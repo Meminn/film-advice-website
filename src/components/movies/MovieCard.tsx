@@ -41,21 +41,22 @@ const MovieCard: React.FC<MovieCardProps> = ({ title, description, imageUrl }) =
         >
           {description}
         </Typography>
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <Button
           size="small"
           onClick={() => setExpanded(!expanded)}
-          sx={{ marginRight: '0.5rem' }} // Add some spacing between buttons
         >
           {expanded ? 'Show Less' : 'Learn More'}
         </Button>
         <Button
-          size="small"
+          size="large"
           component="a"
           href={`https://www.google.com/search?q=${encodeURIComponent(title)}%20(film)`}
           target="_blank"
           rel="noopener noreferrer"
           startIcon={<GoogleIcon />}
           />
+        </div>
       </CardContent>
     </Card>
   );
