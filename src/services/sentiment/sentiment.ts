@@ -68,13 +68,13 @@ class SentimentAnalysisService {
   }
 
   public getMovieRecommendations(userInput: string): MovieRecommendation {
-    console.log('Analyzing user input:', userInput);
+    //console.log('Analyzing user input:', userInput);
     const analysis = this.analyzeSentiment(userInput);
     const genreRecommendation = getGenreRecommendations(analysis.comparative);
     const genreNames = this.getGenreNames(genreRecommendation.genres);
 
-    console.log('Sentiment analysis results:', analysis);
-    console.log('Recommended genres:', genreRecommendation.genres);
+    //console.log('Sentiment analysis results:', analysis);
+    //console.log('Recommended genres:', genreRecommendation.genres);
 
     return {
       genreIds: genreRecommendation.genres,
@@ -92,7 +92,7 @@ const sentimentService = new SentimentAnalysisService();
 
 export const analyzeUserMood = async (userInput: string): Promise<MovieRecommendation> => {
   try {
-    console.log('Analyzing mood for:', userInput);
+    //console.log('Analyzing mood for:', userInput);
     const recommendation = sentimentService.getMovieRecommendations(userInput);
     return recommendation;
   } catch (error) {

@@ -66,7 +66,6 @@ class TMDBService {
     });
 
     const url = `${this.baseUrl}${endpoint}?${queryParams}`; // Construct the full URL
-    console.log('TMDB API Request URL:', url);
     
     const response = await fetch(url); // Make the request
     
@@ -80,14 +79,14 @@ class TMDBService {
   }
 
   async getMoviesByGenres(genreIds: number[]): Promise<Movie[]> {
-    console.log('Getting movies for genres:', genreIds);
+    //console.log('Getting movies for genres:', genreIds);
     
     const movies: Movie[] = [];
     const uniqueMovieIds = new Set<number>();
   
     // If no genres provided, fallback to popular movies
     if (!genreIds || genreIds.length === 0) {
-      console.log('No genres provided, returning popular movies');
+      //console.log('No genres provided, returning popular movies');
       return this.getPopularMovies();
     }
 
@@ -109,7 +108,7 @@ class TMDBService {
       // Process each genre's results
       for (const response of responses) {
         if (!response.results || response.results.length === 0) {
-          console.log('No results for a genre');
+          //console.log('No results for a genre');
           continue;
         }
         
@@ -139,7 +138,7 @@ class TMDBService {
   
     // If we couldn't get enough movies, fill with popular movies
     if (movies.length < 3) {
-      console.log('Not enough genre-specific movies, fetching popular movies');
+      //console.log('Not enough genre-specific movies, fetching popular movies');
       const popularMovies = await this.getPopularMovies();
       
       for (const movie of popularMovies) {
@@ -150,7 +149,7 @@ class TMDBService {
       }
     }
     
-    console.log(`Returning ${movies.length} movies`);
+    //console.log(`Returning ${movies.length} movies`);
     return movies;
   }
 
@@ -169,8 +168,8 @@ class TMDBService {
   }
 
   async getMovieRecommendations(sentimentScore: number, genreIds: number[]): Promise<Movie[]> {
-    console.log('Getting recommendations for sentiment score:', sentimentScore);
-    console.log('And genres:', genreIds);
+    //console.log('Getting recommendations for sentiment score:', sentimentScore);
+    //console.log('And genres:', genreIds);
     
     try {
       return this.getMoviesByGenres(genreIds);
