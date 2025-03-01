@@ -7,13 +7,13 @@ export async function GET(request: Request) {
   const sentimentScore = parseFloat(searchParams.get('sentimentScore') || '0');
   const genreIds = searchParams.get('genreIds')?.split(',').map(Number) || [];
 
-  console.log('TMDB_API_KEY:', process.env.TMDB_API_KEY); // Log the API key
-  console.log('Sentiment Score:', sentimentScore); // Log the sentiment score
-  console.log('Genre IDs:', genreIds); // Log the genre IDs
+  // console.log('TMDB_API_KEY:', process.env.TMDB_API_KEY); // Log the API key
+  // console.log('Sentiment Score:', sentimentScore); // Log the sentiment score
+  // console.log('Genre IDs:', genreIds); // Log the genre IDs
 
   try {
     const recommendations = await tmdbService.getMovieRecommendations(sentimentScore, genreIds);
-    console.log('Recommendations:', recommendations); // Log the recommendations
+    // console.log('Recommendations:', recommendations); // Log the recommendations
     return NextResponse.json(recommendations);
   } catch (error) {
     console.error('Error fetching recommendations:', error);

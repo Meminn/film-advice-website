@@ -17,15 +17,15 @@ function RecommendationsContent() {
   const initialPrompt = searchParams.get('prompt') || '';
 
   const fetchRecommendations = async (userPrompt: string) => {
-    console.log('Fetching recommendations for prompt:', userPrompt);
+    // console.log('Fetching recommendations for prompt:', userPrompt);
     setIsLoading(true);
     
     try {
       const sentiment = await analyzeUserMood(userPrompt);
-      console.log('Sentiment analysis result:', sentiment);
+      // console.log('Sentiment analysis result:', sentiment);
       
       const response = await fetch(`/api/movies?sentimentScore=${sentiment.sentimentScore}&genreIds=${sentiment.genreIds.join(',')}`);
-      console.log('API Response:', response);
+      // console.log('API Response:', response);
 
       const recommendations = await response.json();
       
@@ -34,7 +34,7 @@ function RecommendationsContent() {
       console.error('Error fetching recommendations:', error);
     } finally {
       setIsLoading(false);
-      console.log('Finished fetching recommendations');
+      // console.log('Finished fetching recommendations');
     }
   };
 

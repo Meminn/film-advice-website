@@ -12,7 +12,7 @@ const TMDB_CONFIG = {
   DEFAULT_PARAMS: {
     include_adult: "false",
     'vote_count.gte': "100", 
-    'vote_average.gte': "6",
+    'vote_average.gte': "5",
     'popularity.gte': "10",
     language: 'en-US',
     with_original_language: 'en',

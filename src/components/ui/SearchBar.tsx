@@ -35,7 +35,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ defaultValue, placeholder, onSear
       <div className="relative flex items-center">
         <input
           type="text"
-          value={prompt} // Controlled input
+          value={prompt}
+          maxLength={150}
           onChange={(e) => setPrompt(e.target.value)}
           placeholder={placeholder}
           className="w-full h-14 px-6 pr-12 text-lg rounded-full border border-gray-300 

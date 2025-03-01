@@ -21,30 +21,30 @@ import type { GenreMapping, SentimentMapping } from "./types";
 const sentimentToGenreMapping: SentimentMapping[] = [
   {
     min: -Infinity,
-    max: -0.8,
+    max: -3,
     mapping: {
       genres: [27, 53, 80], // Horror, Thriller, Crime
       description: "Very negative sentiment - intense, darker themes"
     }
   },
   {
-    min: -0.8,
-    max: -0.4,
+    min: -3,
+    max: -2,
     mapping: {
       genres: [9648, 80, 28], // Mystery, Crime, Action
       description: "Moderately negative - suspenseful, engaging content"
     }
   },
   {
-    min: -0.4,
-    max: -0.1,
+    min: -2,
+    max: -1,
     mapping: {
       genres: [878, 28, 53], // Science Fiction, Action, Thriller
       description: "Slightly negative - thought-provoking, high-energy content"
     }
   },
   {
-    min: -0.1,
+    min: -1,
     max: 0.2,
     mapping: {
       genres: [18, 36, 10752], // Drama, History, War
@@ -53,25 +53,25 @@ const sentimentToGenreMapping: SentimentMapping[] = [
   },
   {
     min: 0.2,
-    max: 0.5,
+    max: 1,
     mapping: {
       genres: [12, 14, 878], // Adventure, Fantasy, Science Fiction
       description: "Moderately positive - imaginative, escapist content"
     }
   },
   {
-    min: 0.5,
-    max: 0.8,
+    min: 1,
+    max: 2,
     mapping: {
       genres: [35, 10749, 10402], // Comedy, Romance, Music
       description: "Very positive - uplifting, cheerful content"
     }
   },
   {
-    min: 0.8,
+    min: 2,
     max: Infinity,
     mapping: {
-      genres: [16, 10751, 35], // Animation, Family, Comedy
+      genres: [10751, 16, 35], // Animation, Family, Comedy
       description: "Extremely positive - wholesome, family-friendly content"
     }
   }
