@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     follow: true, // Linklerin takip edilmesine izin verir
   },
   verification: { 
-    google: "google9b7a9f1c8b4121c6.html", // Google Search Console doğrulama kodu
+    google: "co7i0GqP4X8gRtRODgt6rAJ9IQz6U8FznWMQqfOVqj4", // Google Search Console doğrulama kodu
   },
 };
 
