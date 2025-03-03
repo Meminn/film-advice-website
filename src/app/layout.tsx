@@ -49,6 +49,9 @@ export const metadata: Metadata = {
     index: true, // Sayfanın indekslenmesini sağlar
     follow: true, // Linklerin takip edilmesine izin verir
   },
+  verification: { 
+    google: "co7i0GqP4X8gRtRODgt6rAJ9IQz6U8FznWMQqfOVqj4"
+  },
 };
 
 export default function RootLayout({
