@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardContent, CardMedia, Typography, Button } from '@mui/material';
+import { Card, CardContent, CardMedia, Typography, Button, Tooltip } from '@mui/material';
 import GoogleIcon from '@mui/icons-material/Google';
 
 interface MovieCardProps {
@@ -48,14 +48,17 @@ const MovieCard: React.FC<MovieCardProps> = ({ title, description, imageUrl }) =
         >
           {expanded ? 'Show Less' : 'Learn More'}
         </Button>
-        <Button
-          size="large"
-          component="a"
-          href={`https://www.google.com/search?q=${encodeURIComponent(title)}%20(film)`}
-          target="_blank"
-          rel="noopener noreferrer"
-          startIcon={<GoogleIcon />}
-          />
+        <Tooltip title="Search on Google" arrow enterDelay={300} leaveDelay={200}>
+          <Button
+            size="small"
+            component="a"
+            href={`https://www.google.com/search?q=${encodeURIComponent(title)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            startIcon={<GoogleIcon />}
+          >
+          </Button>
+        </Tooltip>
         </div>
       </CardContent>
     </Card>
