@@ -44,11 +44,11 @@ export const metadata: Metadata = {
     //creator: "@moodvice", // Twitter handle (varsa ekleyebilirsin)
   },
   alternates: {
-    canonical: "https://moodvice.vercel.app", // SEO açısından önemli (Google’ın sayfanın esas URL'sini anlamasına yardımcı olur)
+    canonical: "https://moodvice.vercel.app", // Ana URL
   },
   robots: {
-    index: true, // Sayfanın indekslenmesini sağlar
-    follow: true, // Linklerin takip edilmesine izin verir
+    index: true,
+    follow: true,
   },
   verification: { 
     google: "co7i0GqP4X8gRtRODgt6rAJ9IQz6U8FznWMQqfOVqj4", // Google Search Console doğrulama kodu
