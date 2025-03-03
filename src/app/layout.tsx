@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { ThemeProvider } from "next-themes";
+import { Analytics } from '@vercel/analytics/next';
 import "./globals.css";
 
 const inter = Inter({ 
@@ -67,6 +68,7 @@ export default function RootLayout({
 
             <main className="flex-1">
               {children}
+              <Analytics/>
             </main>
 
             <footer className="border-t">
